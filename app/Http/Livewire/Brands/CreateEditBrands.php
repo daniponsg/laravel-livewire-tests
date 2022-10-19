@@ -11,7 +11,7 @@ class CreateEditBrands extends Component
 {
 
     public $name, $country, $brand;
-    public $notFound;
+    public $notFound, $success;
 
     public function mount(Brand $brand)
     {                
@@ -41,6 +41,8 @@ class CreateEditBrands extends Component
             'name' => $this->name,
             'country'=> $this->country,
         ];
+
+        $this->success = true;
 
         if ($this->brand != null) {
             Brand::find($this->brand->id)->update($brand);

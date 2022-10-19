@@ -13,15 +13,14 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-        <link rel="stylesheet" href="{{ mix('css/custom.css') }}">
-
-
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased bg-light">
+        <x-jet-banner />
+        @livewire('navigation-menu')
 
         <!-- Page Heading -->
         <header class="d-flex py-3 bg-white shadow-sm border-bottom">
@@ -32,8 +31,7 @@
 
         <!-- Page Content -->
         <main class="container my-5">
-            <livewire:top-menu />
-            {{ $slot }}           
+            {{ $slot }}
         </main>
 
         @stack('modals')

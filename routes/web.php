@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Brands\AllBrands;
+use App\Http\Livewire\Brands\CreateEditBrands;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('livewire.main');
 });
+
+// BRANDS
+// BRANDS
+// BRANDS
+Route::get('/brands', AllBrands::class);
+Route::get('/brands/create', CreateEditBrands::class);
+Route::get('/brands/{brand}', CreateEditBrands::class);
 
 Route::middleware([
     'auth:sanctum',

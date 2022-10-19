@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('brands', function (Blueprint $table) {
-            $table->string('uuid')->unique();
+            $table->string('id')->unique();
             $table->timestamps();
             $table->text('name');
             $table->text('country');
